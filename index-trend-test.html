@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance OS</title>
+    <style>
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            padding: 20px;
+        }
+        .dash {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .panel {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--card-r);
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+        .panel-title {
+            font-size: 10px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 12px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="dash">
+
+    <!-- Net Worth Metrics -->
+    <div class="metrics">
+        <!-- Placeholder metrics content -->
+        <div class="metric"><div class="ml">Total Net Worth</div><div class="mv">$453,265</div></div>
+    </div>
+
+    <!-- New Net Worth Trend Panel -->
+    <div class="panel">
+        <div class="panel-title">Net Worth Trend (Last 6 Months)</div>
+        <canvas id="netWorthTrend"></canvas>
+    </div>
+
+    <!-- Placeholder text to mimic other parts of dashboard -->
+    <div class="panel">
+        <div class="panel-title">Placeholder Panel</div>
+        <p>Other dashboard content will go here.</p>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Mock data for now
+        const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+        const data = [400000, 410000, 420000, 430000, 440000, 453265];
+
+        const ctx = document.getElementById("netWorthTrend").getContext("2d");
+        new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Net Worth",
+                        data: data,
+                        borderColor: "#4a9eff",
+                        backgroundColor: "rgba(74, 158, 255, 0.3)",
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                },
+                scales: {
+                    x: { title: { display: true, text: "Months" } },
+                    y: { title: { display: true, text: "Net Worth (USD)" } },
+                },
+            },
+        });
+    });
+</script>
+</body>
+</html>
