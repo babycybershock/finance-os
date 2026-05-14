@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finance OS</title>
@@ -11,28 +13,29 @@
   --border:#2a2e42;--card-r:12px;
 }
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:20px}
-.dash{max-width:860px;margin:0 auto}
-.top-label{font-size:10px;color:var(--text3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px}
-.section-label{font-size:10px;letter-spacing:.8px;color:var(--text3);text-transform:uppercase;margin-bottom:12px}
+.dash{max-width:900px;margin:0 auto}
 .pos{color:#3ecf8e}.neg{color:#ff5e5e}
 
-/* GitHub config bar */
 .gh-bar{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:12px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .gh-bar-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;white-space:nowrap;flex-shrink:0}
 .gh-input{background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:12px;color:var(--text);outline:none;flex:1;min-width:120px}
 .gh-input:focus{border-color:var(--blue)}
 .gh-input::placeholder{color:var(--text3)}
 .gh-status{font-size:11px;margin-left:auto;white-space:nowrap;flex-shrink:0}
-.gh-status.ok{color:var(--green)}
-.gh-status.err{color:var(--red)}
-.gh-status.idle{color:var(--text3)}
+.gh-status.ok{color:var(--green)}.gh-status.err{color:var(--red)}.gh-status.idle{color:var(--text3)}
 
+.main-tabs{display:flex;gap:2px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:4px;margin-bottom:20px}
+.main-tab{flex:1;text-align:center;padding:9px;font-size:13px;font-weight:600;border-radius:9px;cursor:pointer;color:var(--text3);transition:all .15s}
+.main-tab.on{background:var(--bg4);color:var(--text)}
+.tab-view{display:none}.tab-view.on{display:block}
+
+.top-label{font-size:10px;color:var(--text3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px}
+.section-label{font-size:10px;letter-spacing:.8px;color:var(--text3);text-transform:uppercase;margin-bottom:12px}
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
 .metric{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:14px 16px}
 .metric .ml{font-size:11px;color:var(--text3);margin-bottom:5px}
 .metric .mv{font-size:20px;font-weight:700}
 .metric .ms{font-size:10px;color:var(--text3);margin-top:3px}
-
 .asset-section{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:16px;margin-bottom:14px}
 .asset-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border)}
 .asset-row:last-child{border-bottom:none}
@@ -41,7 +44,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 .abf{height:100%;border-radius:3px}
 .av{width:76px;text-align:right;font-size:13px;font-weight:600;flex-shrink:0}
 .ap{width:34px;text-align:right;font-size:11px;color:var(--text3);flex-shrink:0}
-
 .panels{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
 .panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:14px}
 .panel-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px}
@@ -78,19 +80,18 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 .ibtn:hover{background:var(--bg4)}
 .xpanel{display:none;margin-top:12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px}
 .xpanel.open{display:block}
-.tabbar{display:flex;gap:2px;background:var(--bg4);border-radius:8px;padding:3px;margin-bottom:12px}
-.xtab{flex:1;text-align:center;padding:5px;font-size:11px;border-radius:6px;cursor:pointer;color:var(--text3);font-weight:500}
-.xtab.on{background:var(--bg2);color:var(--text)}
-.xc{display:none}.xc.on{display:block}
+.itabbar{display:flex;gap:2px;background:var(--bg4);border-radius:8px;padding:3px;margin-bottom:12px}
+.itab{flex:1;text-align:center;padding:5px;font-size:11px;border-radius:6px;cursor:pointer;color:var(--text3);font-weight:500}
+.itab.on{background:var(--bg2);color:var(--text)}
+.ic{display:none}.ic.on{display:block}
 .xopt{background:var(--bg4);border:1px solid var(--border);border-radius:8px;padding:10px;margin-bottom:8px;cursor:pointer}
 .xopt:hover{border-color:var(--blue)}
 .xopt:last-child{margin-bottom:0}
 .xot{font-size:12px;font-weight:500;margin-bottom:3px;color:var(--text)}
 .xod{font-size:11px;color:var(--text3)}
-.xom{font-size:11px;color:var(--blue);margin-top:5px;font-weight:500}
+.xom{font-size:11px;color:var(--blue);margin-top:5px;font-weight:500;cursor:pointer}
 
 hr{border:none;border-top:1px solid var(--border);margin:20px 0}
-
 .input-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:16px}
 .sec-head{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;margin-top:16px}
 .sec-head:first-child{margin-top:0}
@@ -114,6 +115,30 @@ select.month-sel{background:var(--bg3);border:1px solid var(--border);border-rad
 .spinner.on{display:block}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* Trends */
+.trends-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.chart-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:16px}
+.chart-card.full{grid-column:1/-1}
+.chart-title{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+.chart-sub{font-size:11px;color:var(--text3);margin-bottom:14px}
+.chart-wrap{position:relative;width:100%;height:160px}
+.chart-wrap.tall{height:210px}
+canvas{display:block;width:100%;height:100%}
+.housing-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:16px;margin-bottom:14px}
+.housing-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border)}
+.housing-row:last-child{border-bottom:none}
+.housing-label{font-size:12px;color:var(--text2)}
+.housing-val{font-size:13px;font-weight:600}
+.housing-input-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.housing-input-row label{font-size:11px;color:var(--text3)}
+.housing-input-row input{background:var(--bg3);border:1px solid var(--border);border-radius:7px;padding:7px 10px;font-size:13px;font-weight:600;color:var(--text);outline:none;width:180px}
+.housing-input-row input:focus{border-color:var(--blue)}
+.spotlight{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.spot-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);padding:16px}
+.spot-val{font-size:26px;font-weight:700;margin:6px 0 2px}
+.spot-sub{font-size:11px;color:var(--text3)}
+.no-data{font-size:12px;color:var(--text3);text-align:center;padding:30px 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--card-r);margin-bottom:14px}
+
 .toast{position:fixed;bottom:16px;right:16px;padding:9px 16px;border-radius:8px;font-size:12px;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:99}
 .toast.show{opacity:1}
 .toast.ok{background:#3ecf8e;color:#111}
@@ -123,216 +148,469 @@ select.month-sel{background:var(--bg3);border:1px solid var(--border);border-rad
 <body>
 <div class="dash">
 
-  <!-- GitHub config bar -->
   <div class="gh-bar">
     <span class="gh-bar-label">GitHub</span>
-    <input class="gh-input" id="gh-repo" placeholder="username/repo-name" style="max-width:200px">
-    <input class="gh-input" id="gh-file" placeholder="filename (e.g. index.html)" style="max-width:180px" value="index.html">
-    <input class="gh-input" id="gh-pat" type="password" placeholder="PAT (stays in memory only)" style="max-width:220px">
-    <span class="gh-status idle" id="gh-status">pushing…</span>
+    <input class="gh-input" id="gh-repo" placeholder="username/repo-name" style="max-width:200px" value="babycybershock/finance-os">
+    <input class="gh-input" id="gh-file" placeholder="filename" style="max-width:160px" value="index.html">
+    <input class="gh-input" id="gh-pat" type="password" placeholder="PAT (memory only)" style="max-width:220px">
+    <span class="gh-status idle" id="gh-status">not configured</span>
   </div>
 
-  <div class="top-label">Net worth — as of May 2026</div>
-
-  <div class="metrics">
-    <div class="metric"><div class="ml">Total net worth</div><div class="mv">$453,265</div><div class="ms">incl. CPF + investments</div></div>
-    <div class="metric"><div class="ml">Liquid net worth</div><div class="mv">$241,067</div><div class="ms">cash + investments</div></div>
-    <div class="metric"><div class="ml">Liquid + CPF OA</div><div class="mv">$371,623</div><div class="ms">accessible for housing</div></div>
-    <div class="metric"><div class="ml">Monthly surplus</div><div class="mv pos">+$2,137</div><div class="ms">take-home minus expenses</div></div>
+  <div class="main-tabs">
+    <div class="main-tab on" onclick="switchTab('overview',this)">Overview</div>
+    <div class="main-tab" onclick="switchTab('trends',this)">Trends</div>
   </div>
 
-  <div class="asset-section">
-    <div class="section-label">Asset breakdown</div>
-    <div class="asset-row">
-      <div class="al">Cash<br><span style="font-size:10px;color:var(--text3)">OCBC+DBS</span></div>
-      <div class="ab"><div class="abf" style="width:37%;background:#4a9eff"></div></div>
-      <div class="av" style="color:#4a9eff">$169,250</div><div class="ap">37%</div>
+  <!-- ══ OVERVIEW ══ -->
+  <div class="tab-view on" id="tab-overview">
+    <div class="top-label" id="ov-label">Net worth</div>
+    <div class="metrics">
+      <div class="metric"><div class="ml">Total net worth</div><div class="mv" id="m-total">—</div><div class="ms">incl. CPF + investments</div></div>
+      <div class="metric"><div class="ml">Liquid net worth</div><div class="mv" id="m-liquid">—</div><div class="ms">cash + investments</div></div>
+      <div class="metric"><div class="ml">Liquid + CPF OA</div><div class="mv" id="m-housing">—</div><div class="ms">accessible for housing</div></div>
+      <div class="metric"><div class="ml">Monthly surplus</div><div class="mv" id="m-surplus">—</div><div class="ms">take-home minus expenses</div></div>
     </div>
-    <div class="asset-row">
-      <div class="al">CPF<br><span style="font-size:10px;color:var(--text3)">OA+SA+MA</span></div>
-      <div class="ab"><div class="abf" style="width:47%;background:#3ecf8e"></div></div>
-      <div class="av" style="color:#3ecf8e">$212,198</div><div class="ap">47%</div>
+
+    <div class="asset-section">
+      <div class="section-label">Asset breakdown</div>
+      <div class="asset-row">
+        <div class="al">Cash<br><span style="font-size:10px;color:var(--text3)">OCBC+DBS</span></div>
+        <div class="ab"><div class="abf" id="bar-cash" style="background:#4a9eff"></div></div>
+        <div class="av" id="av-cash" style="color:#4a9eff">—</div><div class="ap" id="ap-cash">—</div>
+      </div>
+      <div class="asset-row">
+        <div class="al">CPF<br><span style="font-size:10px;color:var(--text3)">OA+SA+MA</span></div>
+        <div class="ab"><div class="abf" id="bar-cpf" style="background:#3ecf8e"></div></div>
+        <div class="av" id="av-cpf" style="color:#3ecf8e">—</div><div class="ap" id="ap-cpf">—</div>
+      </div>
+      <div class="asset-row">
+        <div class="al">STI ETF</div>
+        <div class="ab"><div class="abf" id="bar-sti" style="background:#9b7cff"></div></div>
+        <div class="av" id="av-sti" style="color:#9b7cff">—</div><div class="ap" id="ap-sti">—</div>
+      </div>
+      <div class="asset-row">
+        <div class="al">Crypto</div>
+        <div class="ab"><div class="abf" id="bar-crypto" style="background:#ff5e5e"></div></div>
+        <div class="av" id="av-crypto" style="color:#ff5e5e">—</div><div class="ap" id="ap-crypto">—</div>
+      </div>
     </div>
-    <div class="asset-row">
-      <div class="al">STI ETF</div>
-      <div class="ab"><div class="abf" style="width:15%;background:#9b7cff"></div></div>
-      <div class="av" style="color:#9b7cff">$68,906</div><div class="ap">15%</div>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="panel-title">Monthly cashflow</div>
+        <div id="cf-rows"></div>
+        <div class="pr total"><span class="prl">Monthly surplus</span><span class="prv" id="cf-surplus">—</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">CPF breakdown</div>
+        <div class="pr"><span class="prl">OA balance</span><span class="prv" id="cpf-oa">—</span></div>
+        <div class="pr"><span class="prl">SA balance</span><span class="prv" id="cpf-sa">—</span></div>
+        <div class="pr"><span class="prl">MA balance</span><span class="prv" id="cpf-ma">—</span></div>
+        <div class="pr"><span class="prl">Monthly OA contrib</span><span class="prv pos">+$1,702</span></div>
+        <div class="pr"><span class="prl">OA interest (2.5%/yr)</span><span class="prv pos" id="cpf-int">—</span></div>
+        <div class="pr total"><span class="prl">Total CPF</span><span class="prv" id="cpf-total">—</span></div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">Investments</div>
+        <div class="inv-main">
+          <div><span class="inv-name">STI ETF</span><span class="inv-tag">DBS</span></div>
+          <div><div class="inv-val" id="inv-sti-val">—</div><div class="inv-pl" id="inv-sti-pl">—</div></div>
+        </div>
+        <div class="inv-mtm">— MtM tracked in Trends ↗</div>
+        <div class="inv-main">
+          <div><span class="inv-name">Crypto</span><span class="inv-tag">Various</span></div>
+          <div><div class="inv-val" id="inv-cry-val">—</div><div class="inv-pl" id="inv-cry-pl">—</div></div>
+        </div>
+        <div class="inv-mtm">— MtM tracked in Trends ↗</div>
+        <div class="sub-inv"><div class="si-name">SOL</div><div><div class="si-val" id="inv-sol-val">—</div><div class="si-pl" id="inv-sol-pl">—</div></div></div>
+        <div class="sub-inv"><div class="si-name">WIF</div><div><div class="si-val" id="inv-wif-val">—</div><div class="si-pl" id="inv-wif-pl">—</div></div></div>
+      </div>
     </div>
-    <div class="asset-row">
-      <div class="al">Crypto</div>
-      <div class="ab"><div class="abf" style="width:1%;background:#ff5e5e"></div></div>
-      <div class="av" style="color:#ff5e5e">$2,911</div><div class="ap">1%</div>
+
+    <div class="idle">
+      <div class="idle-head" id="idle-head">—</div>
+      <div class="idle-sub" id="idle-sub">—</div>
+      <div class="tags" id="idle-tags"></div>
+      <div class="idle-btns">
+        <button class="ibtn" onclick="toggleX()">Explore idle cash ↗</button>
+        <button class="ibtn" onclick="exportExcel()">Export to Excel ↗</button>
+        <button class="ibtn" onclick="copyMonthlySummary()">Copy monthly summary ↗</button>
+      </div>
+      <div class="xpanel" id="xp">
+        <div class="itabbar">
+          <div class="itab on" onclick="itab('invest',this)">Invest more</div>
+          <div class="itab" onclick="itab('housing',this)">Housing goal</div>
+          <div class="itab" onclick="itab('buffer',this)">Emergency buffer</div>
+        </div>
+        <div class="ic on" id="ic-invest">
+          <div class="xopt"><div class="xot">CPF SA top-up</div><div class="xod">Earn 4% p.a. vs 2.5% OA. Tax relief up to $8k/yr.</div><div class="xom" onclick="copyPrompt('Should I top up my CPF SA? I have idle cash and want to understand the tax relief and compounding benefits vs keeping it liquid.')">→ Copy prompt for Claude ↗</div></div>
+          <div class="xopt"><div class="xot">T-bills / SSBs / MMFs</div><div class="xod">Low-risk SGD options ~3–3.5% p.a.</div><div class="xom" onclick="copyPrompt('Compare T-bills, SSBs and money market funds for idle cash in Singapore. What are current rates and tradeoffs?')">→ Copy prompt for Claude ↗</div></div>
+          <div class="xopt"><div class="xot">More STI ETF</div><div class="xod">DCA more into your existing position.</div><div class="xom" onclick="copyPrompt('I already hold the Amova SG STI ETF. Should I DCA more into it with idle cash? What should I consider?')">→ Copy prompt for Claude ↗</div></div>
+        </div>
+        <div class="ic" id="ic-housing">
+          <div class="xopt"><div class="xot">Housing forecast</div><div class="xod">See your 3-year projection in the Trends tab.</div><div class="xom" onclick="switchTab('trends',document.querySelectorAll('.main-tab')[1])">→ Go to Trends ↗</div></div>
+          <div class="xopt"><div class="xot">Buying rules explained</div><div class="xod">TDSR, MSR, LTV, BSD in plain English.</div><div class="xom" onclick="copyPrompt('Explain TDSR, MSR, LTV and BSD in plain English — what do they mean and how do they affect how much I can borrow in Singapore?')">→ Copy prompt for Claude ↗</div></div>
+        </div>
+        <div class="ic" id="ic-buffer">
+          <div class="xopt"><div class="xot">Is 6 months enough?</div><div class="xod">With irregular hours and night calls, maybe 9 months is smarter.</div><div class="xom" onclick="copyPrompt('I have irregular work hours and frequent night calls. Should my emergency fund be 6 or 9 months of expenses?')">→ Copy prompt for Claude ↗</div></div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="input-wrap">
+      <div class="section-label">Monthly update</div>
+      <select class="month-sel" id="mpick">
+        <option value="2026-05">May 2026</option>
+        <option value="2026-06">Jun 2026</option>
+        <option value="2026-07">Jul 2026</option>
+        <option value="2026-08">Aug 2026</option>
+        <option value="2026-09">Sep 2026</option>
+        <option value="2026-10">Oct 2026</option>
+        <option value="2026-11">Nov 2026</option>
+        <option value="2026-12">Dec 2026</option>
+        <option value="2027-01">Jan 2027</option>
+        <option value="2027-02">Feb 2027</option>
+        <option value="2027-03">Mar 2027</option>
+        <option value="2027-04">Apr 2027</option>
+        <option value="2027-05">May 2027</option>
+      </select>
+
+      <div class="sec-head">Assets & income</div>
+      <div class="igrid">
+        <div class="ifield"><label>OCBC balance</label><input id="i-ocbc" type="number" value="164333"></div>
+        <div class="ifield"><label>DBS balance</label><input id="i-dbs" type="number" value="4917"></div>
+        <div class="ifield"><label>STI ETF value</label><input id="i-sti" type="number" value="68906"></div>
+        <div class="ifield"><label>STI total invested</label><input id="i-stiIn" type="number" value="45606"></div>
+      </div>
+      <div class="igrid3">
+        <div class="ifield"><label>CPF OA</label><input id="i-oa" type="number" value="130556"></div>
+        <div class="ifield"><label>CPF SA</label><input id="i-sa" type="number" value="38667"></div>
+        <div class="ifield"><label>CPF MA</label><input id="i-ma" type="number" value="42975"></div>
+      </div>
+      <div class="igrid" style="grid-template-columns:1fr 1fr">
+        <div class="ifield"><label>Monthly take-home</label><input id="i-inc" type="number" value="8397"></div>
+      </div>
+
+      <div class="sec-head">Crypto</div>
+      <div class="igrid">
+        <div class="ifield"><label>SOL invested</label><input id="i-solin" type="number" value="5000"></div>
+        <div class="ifield"><label>SOL current</label><input id="i-solnow" type="number" value="2500"></div>
+        <div class="ifield"><label>WIF invested</label><input id="i-wifin" type="number" value="9925"></div>
+        <div class="ifield"><label>WIF current</label><input id="i-wifnow" type="number" value="411"></div>
+      </div>
+
+      <div class="sec-head">Monthly expenses</div>
+      <div id="erows">
+        <div class="erow"><input class="elbl" placeholder="Label" value="Rent"><input class="eamt" type="number" value="2080"><button class="xbtn" onclick="delE(this)">✕</button></div>
+        <div class="erow"><input class="elbl" placeholder="Label" value="Parents"><input class="eamt" type="number" value="600"><button class="xbtn" onclick="delE(this)">✕</button></div>
+        <div class="erow"><input class="elbl" placeholder="Label" value="CC avg"><input class="eamt" type="number" value="2895"><button class="xbtn" onclick="delE(this)">✕</button></div>
+        <div class="erow"><input class="elbl" placeholder="Label" value="Insurance"><input class="eamt" type="number" value="85"><button class="xbtn" onclick="delE(this)">✕</button></div>
+        <div class="erow"><input class="elbl" placeholder="Label" value="Cleaning"><input class="eamt" type="number" value="200"><button class="xbtn" onclick="delE(this)">✕</button></div>
+        <div class="erow"><input class="elbl" placeholder="Label" value="Gym"><input class="eamt" type="number" value="400"><button class="xbtn" onclick="delE(this)">✕</button></div>
+      </div>
+      <button class="addcat" onclick="addE()">+ Add category</button>
+
+      <div class="acts">
+        <button class="abtn-p" id="log-btn" onclick="logMonth()">
+          <span id="btn-label">Log this month</span>
+          <div class="spinner" id="spinner"></div>
+        </button>
+        <button class="abtn-s" onclick="restore()">Restore from snapshot</button>
+      </div>
     </div>
   </div>
 
-  <div class="panels">
-    <div class="panel">
-      <div class="panel-title">Monthly cashflow</div>
-      <div class="pr"><span class="prl">Take-home</span><span class="prv pos">+$8,397</span></div>
-      <div class="pr"><span class="prl">Rent</span><span class="prv">–$2,080</span></div>
-      <div class="pr"><span class="prl">Parents</span><span class="prv">–$600</span></div>
-      <div class="pr"><span class="prl">CC avg</span><span class="prv">–$2,895</span></div>
-      <div class="pr"><span class="prl">Insurance</span><span class="prv">–$85</span></div>
-      <div class="pr"><span class="prl">Cleaning</span><span class="prv">–$200</span></div>
-      <div class="pr"><span class="prl">Gym</span><span class="prv">–$400</span></div>
-      <div class="pr total"><span class="prl">Monthly surplus</span><span class="prv pos">+$2,137</span></div>
+  <!-- ══ TRENDS ══ -->
+  <div class="tab-view" id="tab-trends">
+
+    <div class="housing-card">
+      <div class="section-label">Housing goal — 3-year projection</div>
+      <div class="housing-input-row">
+        <label>Target purchase price ($)</label>
+        <input type="number" id="t-target" placeholder="e.g. 1200000" oninput="renderTrends()">
+      </div>
+      <div id="housing-projection"></div>
     </div>
 
-    <div class="panel">
-      <div class="panel-title">CPF breakdown</div>
-      <div class="pr"><span class="prl">OA balance</span><span class="prv">$130,556</span></div>
-      <div class="pr"><span class="prl">SA balance</span><span class="prv">$38,667</span></div>
-      <div class="pr"><span class="prl">MA balance</span><span class="prv">$42,975</span></div>
-      <div class="pr"><span class="prl">Monthly OA contrib</span><span class="prv pos">+$1,702</span></div>
-      <div class="pr"><span class="prl">OA interest (2.5%/yr)</span><span class="prv pos">+$272/mo</span></div>
-      <div class="pr total"><span class="prl">Total CPF</span><span class="prv">$212,198</span></div>
+    <div class="spotlight">
+      <div class="spot-card">
+        <div class="chart-title">Investment rate this month</div>
+        <div class="spot-val" id="t-saverate" style="color:var(--blue)">—</div>
+        <div class="spot-sub" id="t-saverate-sub">of take-home going into assets</div>
+      </div>
+      <div class="spot-card">
+        <div class="chart-title">Net worth change vs last month</div>
+        <div class="spot-val" id="t-mom-val">—</div>
+        <div class="spot-sub" id="t-mom-sub">log a 2nd month to see change</div>
+      </div>
     </div>
 
-    <div class="panel">
-      <div class="panel-title">Investments breakdown</div>
-      <div class="inv-main">
-        <div><span class="inv-name">STI ETF</span><span class="inv-tag">DBS</span></div>
-        <div><div class="inv-val">$68,906</div><div class="inv-pl pos">+$23,300 (+51.1%)</div></div>
-      </div>
-      <div class="inv-mtm">— MtM (log 2 months for tracking)</div>
-      <div class="inv-main">
-        <div><span class="inv-name">Crypto</span><span class="inv-tag">Various</span></div>
-        <div><div class="inv-val">$2,911</div><div class="inv-pl neg">–$12,014 (–80.5%)</div></div>
-      </div>
-      <div class="inv-mtm">— MtM (log 2 months for tracking)</div>
-      <div class="sub-inv">
-        <div class="si-name">SOL</div>
-        <div><div class="si-val">$2,500</div><div class="si-pl neg">–$2,500 (–50.0%)</div></div>
-      </div>
-      <div class="sub-inv">
-        <div class="si-name">WIF</div>
-        <div><div class="si-val">$411</div><div class="si-pl neg">–$9,514 (–95.9%)</div></div>
-      </div>
-    </div>
-  </div>
+    <div id="no-data-msg" class="no-data">Log at least 2 months to see trend charts.</div>
 
-  <div class="idle">
-    <div class="idle-head">$131,690 sitting in cash earning almost nothing</div>
-    <div class="idle-sub">Emergency fund (6mo expenses): ~$37,560. Everything above is deployable.</div>
-    <div class="tags">
-      <span class="tag tg">Emergency fund covered</span>
-      <span class="tag ta">$131,690 idle</span>
-      <span class="tag tb">OA growing +$1,974/mo</span>
-      <span class="tag tr">Crypto: –$12,014 total loss</span>
-    </div>
-    <div class="idle-btns">
-      <button class="ibtn" onclick="toggleX()">Explore idle cash ↗</button>
-      <button class="ibtn">Export to Excel ↗</button>
-      <button class="ibtn">Push summary to Notion ↗</button>
-    </div>
-    <div class="xpanel" id="xp">
-      <div class="tabbar">
-        <div class="xtab on" onclick="xtab('invest',this)">Invest more</div>
-        <div class="xtab" onclick="xtab('housing',this)">Housing goal</div>
-        <div class="xtab" onclick="xtab('buffer',this)">Emergency buffer</div>
+    <div class="trends-grid" id="trends-charts" style="display:none">
+      <div class="chart-card full">
+        <div class="chart-title">Net worth over time</div>
+        <div class="chart-sub">Green = total (incl. CPF) · Blue = liquid (cash + investments)</div>
+        <div class="chart-wrap tall"><canvas id="c-nw"></canvas></div>
       </div>
-      <div class="xc on" id="xc-invest">
-        <div class="xopt"><div class="xot">CPF SA top-up</div><div class="xod">Earn 4% p.a. vs 2.5% OA. Tax relief up to $8k/yr.</div><div class="xom">→ Ask Claude ↗</div></div>
-        <div class="xopt"><div class="xot">T-bills / SSBs / MMFs</div><div class="xod">Low-risk SGD options ~3–3.5% p.a.</div><div class="xom">→ Compare options ↗</div></div>
-        <div class="xopt"><div class="xot">More STI ETF</div><div class="xod">DCA more into your existing position.</div><div class="xom">→ Ask Claude ↗</div></div>
+      <div class="chart-card">
+        <div class="chart-title">Monthly surplus</div>
+        <div class="chart-sub">Take-home minus all expenses</div>
+        <div class="chart-wrap"><canvas id="c-sur"></canvas></div>
       </div>
-      <div class="xc" id="xc-housing">
-        <div class="xopt"><div class="xot">Housing forecast</div><div class="xod">Project OA + cash in 3 years. Estimate price range.</div><div class="xom">→ Run forecast ↗</div></div>
-        <div class="xopt"><div class="xot">Buying rules explained</div><div class="xod">TDSR, MSR, LTV, BSD in plain English.</div><div class="xom">→ Explain ↗</div></div>
+      <div class="chart-card">
+        <div class="chart-title">Cash balance</div>
+        <div class="chart-sub">OCBC + DBS — is idle cash moving?</div>
+        <div class="chart-wrap"><canvas id="c-cash"></canvas></div>
       </div>
-      <div class="xc" id="xc-buffer">
-        <div class="xopt"><div class="xot">Is 6 months enough?</div><div class="xod">With night calls, maybe 9 months is smarter.</div><div class="xom">→ Discuss ↗</div></div>
+      <div class="chart-card">
+        <div class="chart-title">STI ETF — value vs invested</div>
+        <div class="chart-sub">Purple = market value · Grey = cost basis</div>
+        <div class="chart-wrap"><canvas id="c-sti"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">Crypto — value vs invested</div>
+        <div class="chart-sub">Red = market value · Grey = cost basis</div>
+        <div class="chart-wrap"><canvas id="c-cry"></canvas></div>
       </div>
     </div>
   </div>
 
-  <hr>
-
-  <div class="input-wrap">
-    <div class="section-label">Monthly update</div>
-    <select class="month-sel" id="mpick">
-      <option value="2026-05">May 2026</option>
-      <option value="2026-06">Jun 2026</option>
-      <option value="2026-07">Jul 2026</option>
-    </select>
-
-    <div class="sec-head">Assets &amp; income</div>
-    <div class="igrid">
-      <div class="ifield"><label>OCBC balance</label><input id="i-ocbc" type="number" value="164333"></div>
-      <div class="ifield"><label>DBS balance</label><input id="i-dbs" type="number" value="4917"></div>
-      <div class="ifield"><label>STI ETF value</label><input id="i-sti" type="number" value="68906"></div>
-      <div class="ifield"><label>STI total invested</label><input id="i-stiIn" type="number" value="45606"></div>
-    </div>
-    <div class="igrid3">
-      <div class="ifield"><label>CPF OA</label><input id="i-oa" type="number" value="130556"></div>
-      <div class="ifield"><label>CPF SA</label><input id="i-sa" type="number" value="38667"></div>
-      <div class="ifield"><label>CPF MA</label><input id="i-ma" type="number" value="42975"></div>
-    </div>
-    <div class="igrid" style="grid-template-columns:1fr 1fr">
-      <div class="ifield"><label>Monthly take-home</label><input id="i-inc" type="number" value="8397"></div>
-    </div>
-
-    <div class="sec-head">Crypto</div>
-    <div class="igrid">
-      <div class="ifield"><label>SOL invested</label><input id="i-solin" type="number" value="5000"></div>
-      <div class="ifield"><label>SOL current</label><input id="i-solnow" type="number" value="2500"></div>
-      <div class="ifield"><label>WIF invested</label><input id="i-wifin" type="number" value="9925"></div>
-      <div class="ifield"><label>WIF current</label><input id="i-wifnow" type="number" value="411"></div>
-    </div>
-
-    <div class="sec-head">Monthly expenses</div>
-    <div id="erows">
-      <div class="erow"><input class="elbl" placeholder="Label" value="Rent"><input class="eamt" type="number" value="2080"><button class="xbtn" onclick="delE(this)">✕</button></div>
-      <div class="erow"><input class="elbl" placeholder="Label" value="Parents"><input class="eamt" type="number" value="600"><button class="xbtn" onclick="delE(this)">✕</button></div>
-      <div class="erow"><input class="elbl" placeholder="Label" value="CC avg"><input class="eamt" type="number" value="2895"><button class="xbtn" onclick="delE(this)">✕</button></div>
-      <div class="erow"><input class="elbl" placeholder="Label" value="Insurance"><input class="eamt" type="number" value="85"><button class="xbtn" onclick="delE(this)">✕</button></div>
-      <div class="erow"><input class="elbl" placeholder="Label" value="Cleaning"><input class="eamt" type="number" value="200"><button class="xbtn" onclick="delE(this)">✕</button></div>
-      <div class="erow"><input class="elbl" placeholder="Label" value="Gym"><input class="eamt" type="number" value="400"><button class="xbtn" onclick="delE(this)">✕</button></div>
-    </div>
-    <button class="addcat" onclick="addE()">+ Add category</button>
-
-    <div class="acts">
-      <button class="abtn-p" id="log-btn" onclick="logMonth()" disabled="">
-        <span id="btn-label">Pushing…</span>
-        <div class="spinner on" id="spinner"></div>
-      </button>
-      <button class="abtn-s" onclick="restore()">Restore from snapshot</button>
-    </div>
-  </div>
 </div>
-
-<div class="toast err" id="toast">Push failed: GitHub push failed: Resource not accessible by personal access token</div>
+<div class="toast" id="toast"></div>
 
 <script>
-const SNAP={"v":1,"history":[{"month":"2026-05","ocbc":164333,"dbs":4917,"cash":169250,"sti":68906,"stiIn":45606,"oa":130556,"sa":38667,"ma":42975,"solIn":5000,"solNow":2500,"wifIn":9925,"wifNow":411,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Cleaning","amount":200},{"label":"Gym","amount":400}]}]};
+const SNAP={"v":2,"history":[{"month":"2026-05","ocbc":164333,"dbs":4917,"cash":169250,"sti":68906,"stiIn":45606,"oa":130556,"sa":38667,"ma":42975,"solIn":5000,"solNow":2500,"wifIn":9925,"wifNow":411,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Cleaning","amount":200},{"label":"Gym","amount":400}]}]};
 
-// ── GitHub config live status ──────────────────────────────────────
-const ghRepo = document.getElementById('gh-repo');
-const ghFile = document.getElementById('gh-file');
-const ghPat  = document.getElementById('gh-pat');
-const ghStat = document.getElementById('gh-status');
+const fmt$ = v=>'$'+Math.round(Math.abs(v)).toLocaleString();
+const fmtSgn = v=>(v>=0?'+':'-')+fmt$(v);
+const fmtPct = (v,base)=>(v>=0?'+':''+(v/base*100).toFixed(1))+'%';
+const fmtMo = m=>{const[y,mo]=m.split('-');return['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][+mo-1]+' '+y;};
+const fmtMoShort = m=>fmtMo(m).split(' ')[0];
 
-function updateGhStatus(){
-  const r=ghRepo.value.trim(), p=ghPat.value.trim();
-  if(r && p){
-    ghStat.textContent='ready ✓';
-    ghStat.className='gh-status ok';
-  } else {
-    ghStat.textContent='not configured';
-    ghStat.className='gh-status idle';
+function derive(h){
+  const cpf=h.oa+h.sa+h.ma;
+  const crypto=h.solNow+h.wifNow;
+  const cryptoIn=h.solIn+h.wifIn;
+  const totalExp=h.expenses.reduce((s,e)=>s+e.amount,0);
+  const surplus=h.income-totalExp;
+  const liquid=h.cash+h.sti+crypto;
+  const total=liquid+cpf;
+  const housingAccessible=liquid+h.oa;
+  const emFund=totalExp*6;
+  const idle=Math.max(0,h.cash-emFund);
+  return{cpf,crypto,cryptoIn,totalExp,surplus,liquid,total,housingAccessible,emFund,idle};
+}
+
+function renderOverview(){
+  const h=SNAP.history[SNAP.history.length-1];
+  const d=derive(h);
+  document.getElementById('ov-label').textContent=`Net worth — as of ${fmtMo(h.month)}`;
+  document.getElementById('m-total').textContent=fmt$(d.total);
+  document.getElementById('m-liquid').textContent=fmt$(d.liquid);
+  document.getElementById('m-housing').textContent=fmt$(d.housingAccessible);
+  const surEl=document.getElementById('m-surplus');
+  surEl.textContent=fmtSgn(d.surplus);surEl.className='mv '+(d.surplus>=0?'pos':'neg');
+
+  function setBar(pfx,val,total){
+    const p=Math.max(1,Math.round(val/total*100));
+    document.getElementById('bar-'+pfx).style.width=p+'%';
+    document.getElementById('av-'+pfx).textContent=fmt$(val);
+    document.getElementById('ap-'+pfx).textContent=p+'%';
   }
-}
-ghRepo.addEventListener('input', updateGhStatus);
-ghPat.addEventListener('input', updateGhStatus);
+  setBar('cash',h.cash,d.total);setBar('cpf',d.cpf,d.total);
+  setBar('sti',h.sti,d.total);setBar('crypto',d.crypto,d.total);
 
-// ── Helpers ────────────────────────────────────────────────────────
-function toggleX(){document.getElementById('xp').classList.toggle('open')}
-function xtab(id,el){
-  document.querySelectorAll('.xtab').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('.xc').forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('xc-'+id).classList.add('on');
+  const cfRows=document.getElementById('cf-rows');
+  cfRows.innerHTML=`<div class="pr"><span class="prl">Take-home</span><span class="prv pos">+${fmt$(h.income)}</span></div>`;
+  h.expenses.forEach(e=>{cfRows.innerHTML+=`<div class="pr"><span class="prl">${e.label}</span><span class="prv">–${fmt$(e.amount)}</span></div>`;});
+  const cfS=document.getElementById('cf-surplus');
+  cfS.textContent=fmtSgn(d.surplus);cfS.className='prv '+(d.surplus>=0?'pos':'neg');
+
+  document.getElementById('cpf-oa').textContent=fmt$(h.oa);
+  document.getElementById('cpf-sa').textContent=fmt$(h.sa);
+  document.getElementById('cpf-ma').textContent=fmt$(h.ma);
+  document.getElementById('cpf-int').textContent='+'+fmt$(h.oa*0.025/12)+'/mo';
+  document.getElementById('cpf-total').textContent=fmt$(d.cpf);
+
+  const stiPl=h.sti-h.stiIn;
+  document.getElementById('inv-sti-val').textContent=fmt$(h.sti);
+  document.getElementById('inv-sti-pl').textContent=`${fmtSgn(stiPl)} (${(stiPl/h.stiIn*100).toFixed(1)}%)`;
+  document.getElementById('inv-sti-pl').className='inv-pl '+(stiPl>=0?'pos':'neg');
+  const cryPl=d.crypto-d.cryptoIn;
+  document.getElementById('inv-cry-val').textContent=fmt$(d.crypto);
+  document.getElementById('inv-cry-pl').textContent=`${fmtSgn(cryPl)} (${(cryPl/d.cryptoIn*100).toFixed(1)}%)`;
+  document.getElementById('inv-cry-pl').className='inv-pl '+(cryPl>=0?'pos':'neg');
+  const solPl=h.solNow-h.solIn;
+  document.getElementById('inv-sol-val').textContent=fmt$(h.solNow);
+  document.getElementById('inv-sol-pl').textContent=`${fmtSgn(solPl)} (${(solPl/h.solIn*100).toFixed(1)}%)`;
+  document.getElementById('inv-sol-pl').className='si-pl '+(solPl>=0?'pos':'neg');
+  const wifPl=h.wifNow-h.wifIn;
+  document.getElementById('inv-wif-val').textContent=fmt$(h.wifNow);
+  document.getElementById('inv-wif-pl').textContent=`${fmtSgn(wifPl)} (${(wifPl/h.wifIn*100).toFixed(1)}%)`;
+  document.getElementById('inv-wif-pl').className='si-pl '+(wifPl>=0?'pos':'neg');
+
+  document.getElementById('idle-head').textContent=`${fmt$(d.idle)} sitting in cash earning almost nothing`;
+  document.getElementById('idle-sub').textContent=`Emergency fund (6mo expenses): ~${fmt$(d.emFund)}. Everything above is deployable.`;
+  const oaGrowth=h.oa*0.025/12+1702;
+  document.getElementById('idle-tags').innerHTML=`
+    <span class="tag tg">Emergency fund covered</span>
+    <span class="tag ta">${fmt$(d.idle)} idle</span>
+    <span class="tag tb">OA growing +${fmt$(oaGrowth)}/mo</span>
+    <span class="tag tr">Crypto: ${fmtSgn(d.crypto-d.cryptoIn)} total</span>`;
 }
+
+// ── Canvas chart engine ───────────────────────────────────────────
+function drawChart(id, datasets, labels){
+  const canvas=document.getElementById(id);
+  if(!canvas)return;
+  const wrap=canvas.parentElement;
+  canvas.width=wrap.offsetWidth||400;
+  canvas.height=wrap.offsetHeight||160;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height;
+  const pad={t:12,r:12,b:28,l:58};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  ctx.clearRect(0,0,W,H);
+
+  if(!labels||labels.length<2){
+    ctx.fillStyle='#6b7194';ctx.font='11px system-ui';ctx.textAlign='center';
+    ctx.fillText('Need 2+ months of data',W/2,H/2);return;
+  }
+
+  const allV=datasets.flatMap(d=>d.values.filter(v=>isFinite(v)));
+  let lo=Math.min(...allV),hi=Math.max(...allV);
+  if(lo===hi){lo-=1000;hi+=1000;}
+  const pad_range=(hi-lo)*0.12;lo-=pad_range;hi+=pad_range;
+
+  const xP=i=>pad.l+i/(labels.length-1)*cW;
+  const yP=v=>pad.t+cH-(v-lo)/(hi-lo)*cH;
+
+  // grid lines
+  ctx.strokeStyle='#2a2e42';ctx.lineWidth=1;
+  for(let i=0;i<=3;i++){
+    const y=pad.t+(i/3)*cH;
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cW,y);ctx.stroke();
+    const val=hi-(i/3)*(hi-lo);
+    ctx.fillStyle='#6b7194';ctx.font='9px system-ui';ctx.textAlign='right';
+    const label=Math.abs(val)>=1000?'$'+(val/1000).toFixed(0)+'k':'$'+Math.round(val);
+    ctx.fillText(label,pad.l-4,y+3);
+  }
+
+  // x labels
+  ctx.fillStyle='#6b7194';ctx.font='9px system-ui';ctx.textAlign='center';
+  labels.forEach((l,i)=>ctx.fillText(l,xP(i),H-6));
+
+  // datasets
+  datasets.forEach(ds=>{
+    const pts=ds.values.map((v,i)=>({x:xP(i),y:yP(v)}));
+    if(ds.fill){
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x,pts[0].y);
+      pts.forEach(p=>ctx.lineTo(p.x,p.y));
+      ctx.lineTo(pts[pts.length-1].x,pad.t+cH);
+      ctx.lineTo(pts[0].x,pad.t+cH);
+      ctx.closePath();ctx.fillStyle=ds.fill;ctx.fill();
+    }
+    ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);
+    pts.forEach(p=>ctx.lineTo(p.x,p.y));
+    ctx.strokeStyle=ds.color;ctx.lineWidth=ds.dashed?1.5:2;
+    if(ds.dashed){ctx.setLineDash([4,3]);}else{ctx.setLineDash([]);}
+    ctx.stroke();ctx.setLineDash([]);
+    pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);ctx.fillStyle=ds.color;ctx.fill();});
+  });
+}
+
+function renderTrends(){
+  const hist=SNAP.history;
+  const labels=hist.map(h=>fmtMoShort(h.month));
+  const latest=hist[hist.length-1];
+  const dLatest=derive(latest);
+
+  // Spotlights
+  const prevSTI=hist.length>1?hist[hist.length-2].sti:latest.stiIn;
+  const stiAdded=Math.max(0,latest.sti-prevSTI);
+  const rate=latest.income>0?(stiAdded/latest.income*100):0;
+  document.getElementById('t-saverate').textContent=rate.toFixed(1)+'%';
+
+  if(hist.length>1){
+    const prev=derive(hist[hist.length-2]);
+    const mom=dLatest.total-prev.total;
+    document.getElementById('t-mom-val').textContent=fmtSgn(mom);
+    document.getElementById('t-mom-val').style.color=mom>=0?'var(--green)':'var(--red)';
+    document.getElementById('t-mom-sub').textContent='vs '+fmtMo(hist[hist.length-2].month);
+  }
+
+  // Show/hide charts
+  const hasMulti=hist.length>=2;
+  document.getElementById('no-data-msg').style.display=hasMulti?'none':'block';
+  document.getElementById('trends-charts').style.display=hasMulti?'grid':'none';
+
+  if(hasMulti){
+    drawChart('c-nw',[
+      {values:hist.map(h=>derive(h).total),color:'#3ecf8e',fill:'rgba(62,207,142,0.07)'},
+      {values:hist.map(h=>derive(h).liquid),color:'#4a9eff',fill:'rgba(74,158,255,0.05)'}
+    ],labels);
+    drawChart('c-sur',[{values:hist.map(h=>derive(h).surplus),color:'#f5a623',fill:'rgba(245,166,35,0.08)'}],labels);
+    drawChart('c-cash',[{values:hist.map(h=>h.cash),color:'#4a9eff',fill:'rgba(74,158,255,0.07)'}],labels);
+    drawChart('c-sti',[
+      {values:hist.map(h=>h.sti),color:'#9b7cff',fill:'rgba(155,124,255,0.08)'},
+      {values:hist.map(h=>h.stiIn),color:'#6b7194',dashed:true}
+    ],labels);
+    drawChart('c-cry',[
+      {values:hist.map(h=>h.solNow+h.wifNow),color:'#ff5e5e',fill:'rgba(255,94,94,0.07)'},
+      {values:hist.map(h=>h.solIn+h.wifIn),color:'#6b7194',dashed:true}
+    ],labels);
+  }
+
+  // Housing projection
+  const target=parseFloat(document.getElementById('t-target').value)||0;
+  const mo=36;
+  const projOA=latest.oa+(1702+latest.oa*0.025/12)*mo;
+  const projCash=latest.cash+dLatest.surplus*mo;
+  const projFunds=projOA+projCash+latest.sti;
+  let html=`
+    <div class="housing-row"><span class="housing-label">Projected CPF OA in 3 yrs</span><span class="housing-val pos">${fmt$(projOA)}</span></div>
+    <div class="housing-row"><span class="housing-label">Projected cash in 3 yrs</span><span class="housing-val">${fmt$(projCash)}</span></div>
+    <div class="housing-row"><span class="housing-label">STI ETF (today)</span><span class="housing-val">${fmt$(latest.sti)}</span></div>
+    <div class="housing-row"><span class="housing-label">Total available for housing</span><span class="housing-val pos">${fmt$(projFunds)}</span></div>`;
+  if(target>0){
+    const dp=target*0.25;
+    const loan=target-dp;
+    const r=0.035/12;
+    const repay=loan*r/(1-Math.pow(1+r,-300));
+    const gap=projFunds-dp;
+    html+=`
+      <div class="housing-row" style="border-top:2px solid var(--border);margin-top:4px"><span class="housing-label">Target price</span><span class="housing-val">${fmt$(target)}</span></div>
+      <div class="housing-row"><span class="housing-label">Min. downpayment (25%)</span><span class="housing-val">${fmt$(dp)}</span></div>
+      <div class="housing-row"><span class="housing-label">${gap>=0?'Buffer above downpayment':'Shortfall to downpayment'}</span><span class="housing-val ${gap>=0?'pos':'neg'}">${gap>=0?'+':''}${fmt$(gap)}</span></div>
+      <div class="housing-row"><span class="housing-label">Est. monthly repayment (3.5%, 25yr)</span><span class="housing-val">${fmt$(repay)}/mo</span></div>`;
+  } else {
+    html+=`<div style="font-size:11px;color:var(--text3);padding:10px 0">Enter a target price above to see downpayment gap and repayment estimate.</div>`;
+  }
+  document.getElementById('housing-projection').innerHTML=html;
+}
+
+// ── Tab switching ─────────────────────────────────────────────────
+function switchTab(id,el){
+  document.querySelectorAll('.main-tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.tab-view').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('tab-'+id).classList.add('on');
+  if(id==='trends')setTimeout(renderTrends,60);
+}
+
+// ── Idle panel ────────────────────────────────────────────────────
+function toggleX(){document.getElementById('xp').classList.toggle('open')}
+function itab(id,el){
+  document.querySelectorAll('.itab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.ic').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');document.getElementById('ic-'+id).classList.add('on');
+}
+
+// ── Helpers ───────────────────────────────────────────────────────
 function delE(b){b.parentElement.remove()}
 function addE(){
   const w=document.getElementById('erows'),r=document.createElement('div');
@@ -340,10 +618,9 @@ function addE(){
   r.innerHTML='<input class="elbl" placeholder="Label"><input class="eamt" type="number" placeholder="0"><button class="xbtn" onclick="delE(this)">✕</button>';
   w.appendChild(r);
 }
-function toast(m, type='ok'){
+function toast(m,type='ok'){
   const t=document.getElementById('toast');
-  t.textContent=m;
-  t.className='toast '+type+' show';
+  t.textContent=m;t.className='toast '+type+' show';
   setTimeout(()=>t.classList.remove('show'),4000);
 }
 function getE(){
@@ -352,146 +629,96 @@ function getE(){
     return{label:i[0].value,amount:parseFloat(i[1].value)||0};
   }).filter(e=>e.label);
 }
+function copyPrompt(txt){
+  navigator.clipboard.writeText(txt).then(()=>toast('Prompt copied — paste into Claude ✓')).catch(()=>toast('Copy failed','err'));
+}
+function copyMonthlySummary(){
+  const h=SNAP.history[SNAP.history.length-1],d=derive(h);
+  const txt=`Finance OS — ${fmtMo(h.month)}\nTotal NW: ${fmt$(d.total)} | Liquid: ${fmt$(d.liquid)}\nSurplus: ${fmtSgn(d.surplus)}/mo\nCash: ${fmt$(h.cash)} | STI ETF: ${fmt$(h.sti)} | Crypto: ${fmt$(d.crypto)}\nCPF OA: ${fmt$(h.oa)} | SA: ${fmt$(h.sa)} | MA: ${fmt$(h.ma)}\nIdle cash: ${fmt$(d.idle)}`;
+  navigator.clipboard.writeText(txt).then(()=>toast('Monthly summary copied ✓')).catch(()=>toast('Copy failed','err'));
+}
+function exportExcel(){
+  const rows=[['Month','Total NW','Liquid NW','Cash','STI ETF','STI Invested','CPF OA','CPF SA','CPF MA','Crypto','Crypto Invested','Income','Expenses','Surplus']];
+  SNAP.history.forEach(h=>{const d=derive(h);rows.push([fmtMo(h.month),d.total,d.liquid,h.cash,h.sti,h.stiIn,h.oa,h.sa,h.ma,d.crypto,d.cryptoIn,h.income,d.totalExp,d.surplus]);});
+  const csv=rows.map(r=>r.join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);a.download='finance-os-history.csv';a.click();
+  toast('CSV downloaded ✓');
+}
+
+// ── Build snapshot (last-write-wins) ─────────────────────────────
 function buildSnap(){
   const g=id=>parseFloat(document.getElementById(id).value)||0;
-  return {
-    v:1,
-    history:[{
-      month:document.getElementById('mpick').value,
-      ocbc:g('i-ocbc'),dbs:g('i-dbs'),
-      cash:g('i-ocbc')+g('i-dbs'),
-      sti:g('i-sti'),stiIn:g('i-stiIn'),
-      oa:g('i-oa'),sa:g('i-sa'),ma:g('i-ma'),
-      solIn:g('i-solin'),solNow:g('i-solnow'),
-      wifIn:g('i-wifin'),wifNow:g('i-wifnow'),
-      income:g('i-inc'),expenses:getE()
-    }]
-  };
+  const month=document.getElementById('mpick').value;
+  const entry={month,ocbc:g('i-ocbc'),dbs:g('i-dbs'),cash:g('i-ocbc')+g('i-dbs'),sti:g('i-sti'),stiIn:g('i-stiIn'),oa:g('i-oa'),sa:g('i-sa'),ma:g('i-ma'),solIn:g('i-solin'),solNow:g('i-solnow'),wifIn:g('i-wifin'),wifNow:g('i-wifnow'),income:g('i-inc'),expenses:getE()};
+  const history=[...SNAP.history];
+  const idx=history.findIndex(h=>h.month===month);
+  if(idx>=0)history[idx]=entry;else history.push(entry);
+  history.sort((a,b)=>a.month.localeCompare(b.month));
+  return{v:2,history};
 }
 
-// ── GitHub push ────────────────────────────────────────────────────
-async function pushToGitHub(newHtml){
-  const repo = ghRepo.value.trim();
-  const file = (ghFile.value.trim() || 'index.html');
-  const pat  = ghPat.value.trim();
+// ── GitHub ────────────────────────────────────────────────────────
+const ghRepo=document.getElementById('gh-repo');
+const ghFile=document.getElementById('gh-file');
+const ghPat=document.getElementById('gh-pat');
+const ghStat=document.getElementById('gh-status');
+function updateGhStatus(){const r=ghRepo.value.trim(),p=ghPat.value.trim();ghStat.textContent=r&&p?'ready ✓':'not configured';ghStat.className='gh-status '+(r&&p?'ok':'idle');}
+ghRepo.addEventListener('input',updateGhStatus);ghPat.addEventListener('input',updateGhStatus);
+// Pre-fill repo
+updateGhStatus();
 
-  if(!repo || !pat) throw new Error('GitHub repo or PAT not set');
-
-  const apiBase = `https://api.github.com/repos/${repo}/contents/${file}`;
-  const headers = {
-    'Authorization': `Bearer ${pat}`,
-    'Accept': 'application/vnd.github+json',
-    'Content-Type': 'application/json'
-  };
-
-  // 1. Get current file SHA (needed to overwrite)
-  let sha = null;
-  const existing = await fetch(apiBase, {headers});
-  if(existing.ok){
-    const data = await existing.json();
-    sha = data.sha;
-  } else if(existing.status !== 404){
-    const err = await existing.json();
-    throw new Error(`GitHub GET failed: ${err.message}`);
-  }
-
-  // 2. Push updated file
-  const body = {
-    message: `Finance OS update — ${new Date().toISOString().slice(0,10)}`,
-    content: btoa(unescape(encodeURIComponent(newHtml))),
-    ...(sha ? {sha} : {})
-  };
-
-  const res = await fetch(apiBase, {
-    method: 'PUT',
-    headers,
-    body: JSON.stringify(body)
-  });
-
-  if(!res.ok){
-    const err = await res.json();
-    throw new Error(`GitHub push failed: ${err.message}`);
-  }
-
-  return await res.json();
+async function pushToGitHub(html){
+  const repo=ghRepo.value.trim(),file=ghFile.value.trim()||'index.html',pat=ghPat.value.trim();
+  if(!repo||!pat)throw new Error('GitHub repo or PAT not set');
+  const base=`https://api.github.com/repos/${repo}/contents/${file}`;
+  const hdrs={'Authorization':`Bearer ${pat}`,'Accept':'application/vnd.github+json','Content-Type':'application/json'};
+  let sha=null;
+  const ex=await fetch(base,{headers:hdrs});
+  if(ex.ok)sha=(await ex.json()).sha;
+  else if(ex.status!==404)throw new Error(`GET failed: ${(await ex.json()).message}`);
+  const res=await fetch(base,{method:'PUT',headers:hdrs,body:JSON.stringify({message:`Finance OS — ${new Date().toISOString().slice(0,10)}`,content:btoa(unescape(encodeURIComponent(html))),...(sha?{sha}:{})})});
+  if(!res.ok)throw new Error(`Push failed: ${(await res.json()).message}`);
 }
 
-// ── Inject updated snapshot into the HTML source ───────────────────
-function buildUpdatedHtml(snapJson){
-  const src = document.documentElement.outerHTML;
-  // Replace the SNAP constant with the new one
-  return src.replace(
-    /const SNAP=\{.*?\};/,
-    `const SNAP=${JSON.stringify(snapJson)};`
-  );
+function buildUpdatedHtml(snap){
+  return document.documentElement.outerHTML.replace(/const SNAP=\{.*?\};/,`const SNAP=${JSON.stringify(snap)};`);
 }
 
-// ── Log this month ─────────────────────────────────────────────────
 async function logMonth(){
-  const btn     = document.getElementById('log-btn');
-  const label   = document.getElementById('btn-label');
-  const spinner = document.getElementById('spinner');
-  const snap    = buildSnap();
-
-  const repo = ghRepo.value.trim();
-  const pat  = ghPat.value.trim();
-
-  if(!repo || !pat){
-    // Fallback: copy to clipboard only
-    const txt = 'LOG THIS MONTH — snapshot JSON:\n'+JSON.stringify(snap);
-    try{
-      await navigator.clipboard.writeText(txt);
-      toast('No GitHub set — snapshot copied to clipboard ✓');
-    } catch(e){
-      toast('Copy failed — check console', 'err');
-      console.log(txt);
-    }
+  const btn=document.getElementById('log-btn'),lbl=document.getElementById('btn-label'),spin=document.getElementById('spinner');
+  const snap=buildSnap();
+  if(!ghRepo.value.trim()||!ghPat.value.trim()){
+    try{await navigator.clipboard.writeText(JSON.stringify(snap));toast('No GitHub — snapshot copied ✓');}catch{toast('Copy failed','err');}
     return;
   }
-
-  // GitHub push flow
-  btn.disabled = true;
-  label.textContent = 'Pushing…';
-  spinner.classList.add('on');
-  ghStat.textContent = 'pushing…';
-  ghStat.className = 'gh-status idle';
-
-  try {
-    const updatedHtml = buildUpdatedHtml(snap);
-    await pushToGitHub(updatedHtml);
-    ghStat.textContent = 'pushed ✓';
-    ghStat.className = 'gh-status ok';
+  btn.disabled=true;lbl.textContent='Pushing…';spin.classList.add('on');
+  ghStat.textContent='pushing…';ghStat.className='gh-status idle';
+  try{
+    await pushToGitHub(buildUpdatedHtml(snap));
+    SNAP.history.length=0;snap.history.forEach(h=>SNAP.history.push(h));
+    renderOverview();
+    ghStat.textContent='pushed ✓';ghStat.className='gh-status ok';
     toast('Pushed to GitHub Pages ✓ — live in ~30s');
-  } catch(err){
-    console.error(err);
-    ghStat.textContent = 'push failed';
-    ghStat.className = 'gh-status err';
-    toast('Push failed: '+err.message, 'err');
-  } finally {
-    btn.disabled = false;
-    label.textContent = 'Log this month';
-    spinner.classList.remove('on');
-  }
+  }catch(err){
+    console.error(err);ghStat.textContent='push failed';ghStat.className='gh-status err';
+    toast('Push failed: '+err.message,'err');
+  }finally{btn.disabled=false;lbl.textContent='Log this month';spin.classList.remove('on');}
 }
 
-// ── Restore from snapshot ──────────────────────────────────────────
 function restore(){
   const h=SNAP.history[SNAP.history.length-1];
-  const s=(id,v)=>{const el=document.getElementById(id);if(el&&v!==undefined)el.value=v};
-  s('i-ocbc',h.ocbc);s('i-dbs',h.dbs);s('i-sti',h.sti);s('i-stiIn',h.stiIn||45606);
+  const s=(id,v)=>{const el=document.getElementById(id);if(el&&v!==undefined)el.value=v;};
+  s('i-ocbc',h.ocbc);s('i-dbs',h.dbs);s('i-sti',h.sti);s('i-stiIn',h.stiIn);
   s('i-oa',h.oa);s('i-sa',h.sa);s('i-ma',h.ma);s('i-inc',h.income);
   s('i-solin',h.solIn);s('i-solnow',h.solNow);s('i-wifin',h.wifIn);s('i-wifnow',h.wifNow);
   if(h.expenses){
     const w=document.getElementById('erows');w.innerHTML='';
-    h.expenses.forEach(e=>{
-      const r=document.createElement('div');r.className='erow';
-      r.innerHTML=`<input class="elbl" value="${e.label}"><input class="eamt" type="number" value="${e.amount}"><button class="xbtn" onclick="delE(this)">✕</button>`;
-      w.appendChild(r);
-    });
+    h.expenses.forEach(e=>{const r=document.createElement('div');r.className='erow';r.innerHTML=`<input class="elbl" value="${e.label}"><input class="eamt" type="number" value="${e.amount}"><button class="xbtn" onclick="delE(this)">✕</button>`;w.appendChild(r);});
   }
   toast('Restored from snapshot ✓');
 }
+
+renderOverview();
 </script>
-
-
-</body></html>
+</body>
+</html>
