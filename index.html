@@ -380,7 +380,7 @@ canvas{display:block;width:100%;height:100%}
 
   <!-- ══ TRENDS ══ -->
   <div class="tab-view" id="tab-trends">
-    <div id="no-data-msg" class="no-data" style="display: block;">Log at least 2 months to see trend charts.</div>
+    <div id="no-data-msg" class="no-data">Log at least 2 months to see trend charts.</div>
     <div class="trends-grid" id="trends-charts" style="display:none">
       <div class="chart-card">
         <div class="chart-title">Net worth over time</div>
@@ -396,10 +396,10 @@ canvas{display:block;width:100%;height:100%}
   </div>
 
 </div>
-<div class="toast err" id="toast">Push failed: GET failed: Bad credentials</div>
+<div class="toast" id="toast"></div>
 
 <script>
-const SNAP={"v":3,"history":[{"month":"2026-05","ocbc":164333,"dbs":4917,"cash":169250,"oa":130556,"sa":38667,"ma":42975,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Cleaning","amount":200},{"label":"Gym","amount":400}],"instruments":[{"id":"sti","name":"STI ETF","broker":"DBS","currentValue":68906,"totalInvested":null,"brokerPL":23300,"brokerPLPct":51.09,"costMode":"broker","subs":[]},{"id":"crypto","name":"Crypto","broker":"Various","currentValue":2911,"totalInvested":14925,"brokerPL":null,"brokerPLPct":null,"costMode":"invested","subs":[{"id":"sol","name":"SOL","currentValue":2500,"totalInvested":5000},{"id":"wif","name":"WIF","currentValue":411,"totalInvested":9925}]}]},{"month":"2026-07","ocbc":158559,"dbs":5765,"cash":164324,"oa":136077,"sa":40107,"ma":44895,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Subscriptions (X-box / Claude / M1 / AMZ / FP)","amount":83},{"label":"Gym","amount":400}],"instruments":[{"id":"sti","name":"STI ETF","broker":"DBS","currentValue":77927,"totalInvested":0,"brokerPL":31329,"brokerPLPct":67.23,"costMode":"broker","subs":[]},{"id":"crypto","name":"Crypto","broker":"Various","currentValue":2911,"totalInvested":14925,"brokerPL":0,"brokerPLPct":0,"costMode":"invested","subs":[{"id":"sol","name":"SOL","currentValue":2255,"totalInvested":5000},{"id":"wif","name":"WIF","currentValue":326,"totalInvested":9925}]}]}]};
+const SNAP={"v":3,"history":[{"month":"2026-05","ocbc":164333,"dbs":4917,"cash":169250,"oa":130556,"sa":38667,"ma":42975,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Cleaning","amount":200},{"label":"Gym","amount":400}],"instruments":[{"id":"sti","name":"STI ETF","broker":"DBS","currentValue":68906,"totalInvested":null,"brokerPL":23300,"brokerPLPct":51.09,"costMode":"broker","subs":[]},{"id":"crypto","name":"Crypto","broker":"Various","currentValue":2911,"totalInvested":14925,"brokerPL":null,"brokerPLPct":null,"costMode":"invested","subs":[{"id":"sol","name":"SOL","currentValue":2500,"totalInvested":5000},{"id":"wif","name":"WIF","currentValue":411,"totalInvested":9925}]}]},{"month":"2026-07","ocbc":158559,"dbs":5765,"cash":164324,"oa":136077,"sa":40107,"ma":44895,"income":8397,"expenses":[{"label":"Rent","amount":2080},{"label":"Parents","amount":600},{"label":"CC avg","amount":2895},{"label":"Insurance","amount":85},{"label":"Subscriptions","amount":85},{"label":"Gym","amount":400}],"instruments":[{"id":"sti","name":"STI ETF","broker":"DBS","currentValue":77927,"totalInvested":0,"brokerPL":31329,"brokerPLPct":67.23,"costMode":"broker","subs":[]},{"id":"crypto","name":"Crypto","broker":"Various","currentValue":2911,"totalInvested":14925,"brokerPL":0,"brokerPLPct":0,"costMode":"invested","subs":[{"id":"sol","name":"SOL","currentValue":2245,"totalInvested":5000},{"id":"wif","name":"WIF","currentValue":322,"totalInvested":9925}]}]}]};
 
 const fmt$ = v=>'$'+Math.round(Math.abs(v)).toLocaleString();
 const fmtSgn = v=>(v>=0?'+':'-')+fmt$(v);
