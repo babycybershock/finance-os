@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Finance OS</title>
@@ -189,7 +191,7 @@ canvas{display:block;width:100%;height:100%}
     <input class="gh-input" id="gh-repo" placeholder="username/repo-name" style="max-width:200px" value="babycybershock/finance-os">
     <input class="gh-input" id="gh-file" placeholder="filename" style="max-width:160px" value="index.html">
     <input class="gh-input" id="gh-pat" type="password" placeholder="PAT (memory only)" style="max-width:220px">
-    <span class="gh-status idle" id="gh-status">pushing…</span>
+    <span class="gh-status idle" id="gh-status">not configured</span>
   </div>
 
   <div class="main-tabs">
@@ -199,27 +201,27 @@ canvas{display:block;width:100%;height:100%}
 
   <!-- ══ OVERVIEW ══ -->
   <div class="tab-view on" id="tab-overview">
-    <div class="top-label" id="ov-label">Net worth — as of May 2026</div>
+    <div class="top-label" id="ov-label">Net worth</div>
     <div class="metrics">
-      <div class="metric"><div class="ml">Total net worth</div><div class="mv" id="m-total">$453,265</div><div class="ms" id="m-total-sub">incl. CPF + investments</div></div>
-      <div class="metric"><div class="ml">Liquid net worth</div><div class="mv" id="m-liquid">$241,067</div><div class="ms">cash + investments</div></div>
-      <div class="metric"><div class="ml">Housing-accessible</div><div class="mv" id="m-housing">$371,623</div><div class="ms">liquid + CPF OA</div></div>
-      <div class="metric"><div class="ml">Growth rate</div><div class="mv" id="m-growth">—</div><div class="ms" id="m-growth-sub">log a 2nd month to see rate</div></div>
+      <div class="metric"><div class="ml">Total net worth</div><div class="mv" id="m-total">—</div><div class="ms" id="m-total-sub">incl. CPF + investments</div></div>
+      <div class="metric"><div class="ml">Liquid net worth</div><div class="mv" id="m-liquid">—</div><div class="ms">cash + investments</div></div>
+      <div class="metric"><div class="ml">Housing-accessible</div><div class="mv" id="m-housing">—</div><div class="ms">liquid + CPF OA</div></div>
+      <div class="metric"><div class="ml">Growth rate</div><div class="mv" id="m-growth">—</div><div class="ms" id="m-growth-sub">per month, trailing</div></div>
     </div>
 
     <div class="asset-section">
       <div class="section-label">Asset breakdown</div>
       <div class="asset-row">
         <div class="al">Cash<br><span style="font-size:10px;color:var(--text3)">OCBC+DBS</span></div>
-        <div class="ab"><div class="abf" id="bar-cash" style="background: rgb(74, 158, 255); width: 37%;"></div></div>
-        <div class="av" id="av-cash" style="color:#4a9eff">$169,250</div><div class="ap" id="ap-cash">37%</div>
+        <div class="ab"><div class="abf" id="bar-cash" style="background:#4a9eff"></div></div>
+        <div class="av" id="av-cash" style="color:#4a9eff">—</div><div class="ap" id="ap-cash">—</div>
       </div>
       <div class="asset-row">
         <div class="al">CPF<br><span style="font-size:10px;color:var(--text3)">OA+SA+MA</span></div>
-        <div class="ab"><div class="abf" id="bar-cpf" style="background: rgb(62, 207, 142); width: 47%;"></div></div>
-        <div class="av" id="av-cpf" style="color:#3ecf8e">$212,198</div><div class="ap" id="ap-cpf">47%</div>
+        <div class="ab"><div class="abf" id="bar-cpf" style="background:#3ecf8e"></div></div>
+        <div class="av" id="av-cpf" style="color:#3ecf8e">—</div><div class="ap" id="ap-cpf">—</div>
       </div>
-      <div id="asset-instrument-rows"><div class="asset-row"><div class="al">STI ETF</div><div class="ab"><div class="abf" style="width:15%;background:#9b7cff"></div></div><div class="av" style="color:#9b7cff">$68,906</div><div class="ap">15%</div></div><div class="asset-row"><div class="al">Crypto</div><div class="ab"><div class="abf" style="width:1%;background:#ff5e5e"></div></div><div class="av" style="color:#ff5e5e">$2,911</div><div class="ap">1%</div></div></div>
+      <div id="asset-instrument-rows"></div>
     </div>
 
     <div class="panels">
@@ -229,45 +231,27 @@ canvas{display:block;width:100%;height:100%}
           <label>Target price ($)</label>
           <input type="number" id="hr-target" placeholder="e.g. 1200000" oninput="renderHousingReadiness()">
         </div>
-        <div id="hr-body"><div class="hr-hdr"><span>Source</span><span>Max</span><span>Use %</span><span>Deploy</span></div><div class="hr-row">
-      <div class="hr-lbl">Cash (em-net)</div>
-      <div class="hr-base">$131,690</div>
-      <input type="number" class="hr-pct" min="0" max="100" value="100" oninput="updateDeployPct('cash',this.value)">
-      <div class="hr-adj">$131,690</div>
-    </div><div class="hr-row">
-      <div class="hr-lbl">Investments</div>
-      <div class="hr-base">$71,817</div>
-      <input type="number" class="hr-pct" min="0" max="100" value="100" oninput="updateDeployPct('inv',this.value)">
-      <div class="hr-adj">$71,817</div>
-    </div><div class="hr-row">
-      <div class="hr-lbl">CPF OA</div>
-      <div class="hr-base">$130,556</div>
-      <input type="number" class="hr-pct" min="0" max="100" value="100" oninput="updateDeployPct('oa',this.value)">
-      <div class="hr-adj">$130,556</div>
-    </div><div class="hr-total"><span>Deployable</span><span></span><span></span><span class="pos">$334,063</span></div><div class="hr-verdict noset">Set a target price above to see gap analysis</div></div>
+        <div id="hr-body"></div>
       </div>
       <div class="panel">
         <div class="panel-title">CPF breakdown</div>
-        <div class="pr"><span class="prl">OA balance</span><span class="prv" id="cpf-oa">$130,556</span></div>
-        <div class="pr"><span class="prl">SA balance</span><span class="prv" id="cpf-sa">$38,667</span></div>
-        <div class="pr"><span class="prl">MA balance</span><span class="prv" id="cpf-ma">$42,975</span></div>
+        <div class="pr"><span class="prl">OA balance</span><span class="prv" id="cpf-oa">—</span></div>
+        <div class="pr"><span class="prl">SA balance</span><span class="prv" id="cpf-sa">—</span></div>
+        <div class="pr"><span class="prl">MA balance</span><span class="prv" id="cpf-ma">—</span></div>
         <div class="pr"><span class="prl">Monthly OA contrib</span><span class="prv pos">+$1,702</span></div>
-        <div class="pr"><span class="prl">OA interest (2.5%/yr)</span><span class="prv pos" id="cpf-int">+$272/mo</span></div>
-        <div class="pr total"><span class="prl">Total CPF</span><span class="prv" id="cpf-total">$212,198</span></div>
+        <div class="pr"><span class="prl">OA interest (2.5%/yr)</span><span class="prv pos" id="cpf-int">—</span></div>
+        <div class="pr total"><span class="prl">Total CPF</span><span class="prv" id="cpf-total">—</span></div>
       </div>
       <div class="panel">
         <div class="panel-title">Investments</div>
-        <div id="inv-panel-body"><div class="inv-main"><div><span class="inv-name">STI ETF</span><span class="inv-tag">DBS</span></div><div><div class="inv-val"><span class="inv-lbl">value</span>$68,906</div><div class="inv-pl pos"><span class="inv-lbl">P&amp;L</span>+$23,300 (+51.1%)</div></div></div><div class="inv-mtm">— MtM (log 2 months for tracking)</div><div class="inv-main"><div><span class="inv-name">Crypto</span><span class="inv-tag">Various</span></div><div><div class="inv-val"><span class="inv-lbl">value</span>$2,911</div><div class="inv-pl neg"><span class="inv-lbl">P&amp;L</span>-$12,014 (-80.5%)</div></div></div><div class="inv-mtm">— MtM (log 2 months for tracking)</div><div class="sub-inv"><div class="si-name">SOL</div><div><div class="si-val"><span class="inv-lbl">value</span>$2,500</div><div class="si-pl neg"><span class="inv-lbl">P&amp;L</span>-$2,500 (-50.0%)</div></div></div><div class="si-mtm">— MtM (log 2 months for tracking)</div><div class="sub-inv"><div class="si-name">WIF</div><div><div class="si-val"><span class="inv-lbl">value</span>$411</div><div class="si-pl neg"><span class="inv-lbl">P&amp;L</span>-$9,514 (-95.9%)</div></div></div><div class="si-mtm">— MtM (log 2 months for tracking)</div></div>
+        <div id="inv-panel-body"></div>
       </div>
     </div>
 
     <div class="idle">
-      <div class="idle-head" id="idle-head">$131,690 sitting in cash earning almost nothing</div>
-      <div class="idle-sub" id="idle-sub">Emergency fund (6mo listed expenses): ~$37,560. Everything above is deployable.</div>
-      <div class="tags" id="idle-tags">
-    <span class="tag ta">$131,690 idle</span>
-    <span class="tag tb">Housing-accessible: $371,623</span>
-    <span class="tag tg">Investments: +$11,286 total</span></div>
+      <div class="idle-head" id="idle-head">—</div>
+      <div class="idle-sub" id="idle-sub">—</div>
+      <div class="tags" id="idle-tags"></div>
       <div class="idle-btns">
         <button class="ibtn" onclick="toggleX()">Explore idle cash ↗</button>
         <button class="ibtn" onclick="exportExcel()">Export to Excel ↗</button>
@@ -309,7 +293,7 @@ canvas{display:block;width:100%;height:100%}
         <option value="2027-05">May 2027</option>
       </select>
 
-      <div class="sec-head">Assets &amp; income</div>
+      <div class="sec-head">Assets & income</div>
       <div class="igrid" style="grid-template-columns:1fr 1fr">
         <div class="ifield"><label>OCBC balance</label><input id="i-ocbc" type="number" value="164333"></div>
         <div class="ifield"><label>DBS balance</label><input id="i-dbs" type="number" value="4917"></div>
@@ -324,37 +308,7 @@ canvas{display:block;width:100%;height:100%}
       </div>
 
       <div class="sec-head">Investments</div>
-      <div id="instRows"><div class="inst-block" data-id="sti">
-    <div class="inst-head-row">
-      <input class="inst-name" placeholder="Instrument name">
-      <input class="inst-broker" placeholder="Broker/platform">
-      <button class="xbtn" onclick="removeInstrument(this)">✕</button>
-    </div>
-    <div class="inst-fields" style="display: grid;">
-      <div class="ifield f-cv"><label>Current value</label><input type="number" class="f-currentValue"></div>
-      <div class="ifield f-inv" style="display: none;"><label>Total invested</label><input type="number" class="f-totalInvested"></div>
-      <div class="ifield f-bpl" style="display: flex;"><label>Broker P&amp;L ($)</label><input type="number" class="f-brokerPL"></div>
-      <div class="ifield f-bplp" style="display: flex;"><label>Broker P&amp;L (%)</label><input type="number" step="0.01" class="f-brokerPLPct"></div>
-    </div>
-    <label class="inst-toggle" style="display: flex;"><input type="checkbox" class="f-brokerMode" onchange="toggleBrokerMode(this)"> Use broker-reported P&amp;L (for messy cost-basis funds)</label>
-    <div class="sub-list"></div>
-    <button class="addcat" onclick="addSub(this)">+ Add sub-holding</button>
-  </div><div class="inst-block" data-id="crypto">
-    <div class="inst-head-row">
-      <input class="inst-name" placeholder="Instrument name">
-      <input class="inst-broker" placeholder="Broker/platform">
-      <button class="xbtn" onclick="removeInstrument(this)">✕</button>
-    </div>
-    <div class="inst-fields" style="display: none;">
-      <div class="ifield f-cv"><label>Current value</label><input type="number" class="f-currentValue"></div>
-      <div class="ifield f-inv" style="display: flex;"><label>Total invested</label><input type="number" class="f-totalInvested"></div>
-      <div class="ifield f-bpl" style="display:none"><label>Broker P&amp;L ($)</label><input type="number" class="f-brokerPL"></div>
-      <div class="ifield f-bplp" style="display:none"><label>Broker P&amp;L (%)</label><input type="number" step="0.01" class="f-brokerPLPct"></div>
-    </div>
-    <div class="subs-note">Value &amp; P&amp;L computed from sub-holdings below</div><label class="inst-toggle" style="display: none;"><input type="checkbox" class="f-brokerMode" onchange="toggleBrokerMode(this)"> Use broker-reported P&amp;L (for messy cost-basis funds)</label>
-    <div class="sub-list"><div class="sub-row" data-id="sol"><input class="sub-name" placeholder="Name"><input type="number" class="sub-cv" placeholder="Current value"><input type="number" class="sub-inv" placeholder="Total invested"><button class="xbtn" onclick="removeSub(this)">✕</button></div><div class="sub-row" data-id="wif"><input class="sub-name" placeholder="Name"><input type="number" class="sub-cv" placeholder="Current value"><input type="number" class="sub-inv" placeholder="Total invested"><button class="xbtn" onclick="removeSub(this)">✕</button></div></div>
-    <button class="addcat" onclick="addSub(this)">+ Add sub-holding</button>
-  </div></div>
+      <div id="instRows"></div>
       <button class="addcat" onclick="addInstrument()">+ Add instrument</button>
 
       <div class="sec-head">Monthly expenses <span style="text-transform:none;font-weight:400">(reference only — not used in projections)</span></div>
@@ -369,9 +323,9 @@ canvas{display:block;width:100%;height:100%}
       <button class="addcat" onclick="addE()">+ Add category</button>
 
       <div class="acts">
-        <button class="abtn-p" id="log-btn" onclick="logMonth()" disabled="">
-          <span id="btn-label">Pushing…</span>
-          <div class="spinner on" id="spinner"></div>
+        <button class="abtn-p" id="log-btn" onclick="logMonth()">
+          <span id="btn-label">Log this month</span>
+          <div class="spinner" id="spinner"></div>
         </button>
         <button class="abtn-s" onclick="restore()">Restore from snapshot</button>
       </div>
@@ -957,8 +911,14 @@ async function pushToGitHub(html){
   const res=await fetch(base,{method:'PUT',headers:hdrs,body:JSON.stringify({message:`Finance OS — ${new Date().toISOString().slice(0,10)}`,content:btoa(unescape(encodeURIComponent(html))),...(sha?{sha}:{})})});
   if(!res.ok)throw new Error(`Push failed: ${(await res.json()).message}`);
 }
+// Captured at init before renders modify the DOM. Used by buildUpdatedHtml
+// so pushes never need a fragile document.documentElement.outerHTML re-read
+// (which fails silently on some file:// origins).
+let INITIAL_HTML=null;
+
 function buildUpdatedHtml(snap){
-  return document.documentElement.outerHTML.replace(/const SNAP=\{.*?\};/,`const SNAP=${JSON.stringify(snap)};`);
+  const src=INITIAL_HTML||('<!DOCTYPE html>\n'+document.documentElement.outerHTML);
+  return src.replace(/const SNAP=\{.*?\};/,`const SNAP=${JSON.stringify(snap)};`);
 }
 async function logMonth(){
   const btn=document.getElementById('log-btn'),lbl=document.getElementById('btn-label'),spin=document.getElementById('spinner');
@@ -996,14 +956,15 @@ function restore(){
 
 // ── Init: migrate SNAP to v3, populate dynamic inputs, render ────
 (function init(){
+  INITIAL_HTML='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
   const migrated=migrateSnap(SNAP);
+  const newHistory=migrated.history.slice();
   SNAP.v=migrated.v;
   SNAP.history.length=0;
-  migrated.history.forEach(h=>SNAP.history.push(h));
+  newHistory.forEach(h=>SNAP.history.push(h));
   renderInstrumentInputs(SNAP.history[SNAP.history.length-1].instruments);
   renderOverview();
 })();
 </script>
-
-
-</body></html>
+</body>
+</html>
